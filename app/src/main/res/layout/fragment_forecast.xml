@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_bg"
+        android:paddingTop="25dp"
+        tools:context=".main.fragments.ForecastFragment">
+
+        <RelativeLayout
+            android:id="@+id/mainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:padding="5dp"
+                android:layout_marginHorizontal="25dp"
+                android:theme="@style/SearchViewStyle"
+                app:closeIcon="@drawable/baseline_cancel_24"
+                app:queryHint="Search by city name"
+                app:searchHintIcon="@drawable/ic_baseline_search_24"
+                app:searchIcon="@drawable/ic_baseline_search_24" />
+
+            <LinearLayout
+                android:id="@+id/addressContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etSearch"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_marginHorizontal="25dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_view_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    tools:text="BUCURESTI, BD" />
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvForeCast"
+                android:layout_below="@+id/addressContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>
